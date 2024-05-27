@@ -20,7 +20,7 @@ name_chain = LLMChain(llm=llm, prompt=prompt_template_name, output_key="restaura
 
 prompt_template_menu = PromptTemplate(
     input_variables=["restaurant_name"],
-  template="""suggest me menu items for the restaurant {restaurant_name}. Your output should be a comma seprated list.""",
+  template="""suggest me menu items for the restaurant {restaurant_name}. Your output should be a comma seprated list. Only generate menu items name""",
 )
 
 menu_chain = LLMChain(llm=llm, prompt=prompt_template_menu, output_key="menu_items")

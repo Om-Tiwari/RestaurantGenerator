@@ -1,5 +1,8 @@
+from fastapi import FastAPI
 import gradio as gr
 from langchainhelper import generate_restaurant
+
+app = FastAPI()
 
 # Create a Gradio interface
 interface = gr.Interface(
@@ -13,6 +16,4 @@ interface = gr.Interface(
 )
 
 
-
-# Launch the interface
-interface.launch()
+app = gr.mount_gradio_app(app, interface, path="/")
